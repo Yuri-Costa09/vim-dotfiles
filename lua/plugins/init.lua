@@ -43,6 +43,7 @@ return {
         "clojure",
         "dockerfile",
         "elixir",
+        "haskell",
         "prisma",
         "ziggy"
   		},
