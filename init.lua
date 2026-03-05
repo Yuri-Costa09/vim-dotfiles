@@ -21,7 +21,6 @@ require("lazy").setup({
         branch = "v2.5",
         import = "nvchad.plugins",
     },
-
     {
         "neovim/nvim-lspconfig",
         config = function()
@@ -36,6 +35,7 @@ require("lazy").setup({
                     "clangd",
                     "clojure-lsp",
                     "gopls",
+                    "elixirls",
                     "lua-language-server",
                 },
                 automatic_installation = true, -- O Mason vai instalar automaticamente se não encontrar
@@ -69,6 +69,8 @@ require("lazy").setup({
                         analyses = {
                             unusedparams = true,
                         },
+                        staticheck = true,
+                        gofumpt = true
                     },
                 },
             }
