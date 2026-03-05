@@ -50,9 +50,23 @@ return {
     },
   },
   {
+  "iamcco/markdown-preview.nvim",
+  cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+  build = "cd app && yarn install",
+  init = function()
+    vim.g.mkdp_filetypes = { "markdown" }
+  end,
+  ft = { "markdown" },
+},
+  {
     "mrcjkb/rustaceanvim",
     version = "^6",
     lazy = false,
+  },
+  {
+  "folke/todo-comments.nvim",
+  dependencies = { "nvim-lua/plenary.nvim" },
+  opts = {
   },
   {
     "ThePrimeagen/harpoon",
