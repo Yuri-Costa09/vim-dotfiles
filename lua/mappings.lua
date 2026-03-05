@@ -5,7 +5,6 @@ require "nvchad.mappings"
 local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
-vim.g["conjure#mapping#doc_word"] = {"K"}
 map('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to Definition' })
 map('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to Declaration' })
 map('n', 'gi', vim.lsp.buf.implementation, { desc = 'Go to Implementation' })

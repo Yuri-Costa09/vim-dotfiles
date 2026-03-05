@@ -1,19 +1,34 @@
 require("nvchad.configs.lspconfig").defaults()
 
+-- Custom gopls setup
+vim.lsp.config("gopls", {
+  filetypes = { "go", "gomod", "gowork", "gotmpl" },
+  settings = {
+    gopls = {
+      completeUnimported = true,
+      usePlaceholders = true,
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+      gofumpt = true,
+    },
+  },
+})
+
 local servers = {
   "html",
   "cssls",
-  "gopls",
-  "rust_analyzer",
   "clangd",
   "clojure_lsp",
   "elixirls",
   "yaml_ls",
-  "tsserver",
+  "ts_ls",
   "docker_compose_language_service",
   "dockerls",
-  "jsonls"
+  "jsonls",
+  "gopls"
 }
-vim.lsp.enable(servers)
 
--- read :h vim.lsp.config for changing options of lsp servers 
+-- Enable all the servers
+vim.lsp.enable(servers)
